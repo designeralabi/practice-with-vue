@@ -20,12 +20,21 @@
             text-transform: uppercase;
             line-height: 2rem;
         }
+        ol{
+            text-transform: capitalize;
+        }
     </style>
 </head>
 <body>
     <div id="app" v-cloak>
         <div class="box" v-if="visible">
             <p>{{greeting}}</p> 
+
+            <ol>
+                <li v-for="(todo, index) in todos" :key="index">
+                    {{todo.text}}
+                </li>
+            </ol>
         </div>
         <button v-on:click="reverseMessage">Reverse Message</button>
         <button v-on:click="toggleBox">toggleBox</button>
@@ -38,7 +47,12 @@
             data() {
                 return {
                     greeting: "Hello Salmah, welcome to Vue" + new Date().toLocaleString(), 
-                    visible: true 
+                    visible: true,
+                    todos: [
+                        {text: 'Learn Javascript'},
+                        {text: 'Learn Vue'},
+                        {text: 'Build something awesome'}
+                    ]
                 }
             },
             methods: {
