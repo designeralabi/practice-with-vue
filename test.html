@@ -24,10 +24,11 @@
 </head>
 <body>
     <div id="app" v-cloak>
-        <div class="box" >
+        <div class="box" v-if="visible">
             <p>{{greeting}}</p> 
         </div>
         <button v-on:click="reverseMessage">Reverse Message</button>
+        <button v-on:click="toggleBox">toggleBox</button>
       
     
 
@@ -36,12 +37,16 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    greeting: "Hello Salmah, welcome to Vue" + new Date().toLocaleString(),  
+                    greeting: "Hello Salmah, welcome to Vue" + new Date().toLocaleString(), 
+                    visible: true 
                 }
             },
             methods: {
                 reverseMessage(){
                     this.greeting = this.greeting.split('').reverse().join('')
+                },
+                toggleBox(){
+                    this.visible = !this.visible
                 }
             },
         })
