@@ -9,14 +9,16 @@
   <body>
     <div id="app">
       <div>
-        <label for="goal">Goal</label>
-        <input type="text" id="goal" />
-        <button>Add Goal</button>
+        <label for="goal" >Goal</label>
+        <input type="text" v-model="data" id="goal" />
+        <button @click="updateGoal" :style="{backgroundColor: 'red', color: 'white', border: 'none', padding: '10px'}">Add Goal</button>
       </div>
       <ul>
-        <li>Test</li>
+        <li v-if="goals.length === 0" v-for="goal in goals">{{goal}}</li>
       </ul>
     </div>
+
+    <!-- import Vue cdn -->
     <script src="https://unpkg.com/vue@next"></script>
     <script src="app.js"></script>
 
