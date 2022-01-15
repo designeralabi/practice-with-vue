@@ -1,13 +1,17 @@
 const app = Vue.createApp({
-    data() {
-        return {
-            about: 'Events',
-            last: ''
-        };
+  data() {
+    return {
+      about: "Events",
+      last: "",
+      confirmName: "",
+    };
+  },
+  methods: {
+    confirmInput() {
+      this.confirmName = this.last;
     },
-    methods: {
-        updateInfo(event, lastName){
-            this.last = event.target.value + lastName; 
-        }
+    updateInfo(event, lastName) {
+      this.last = event.target.value + lastName;
     },
+  },
 });

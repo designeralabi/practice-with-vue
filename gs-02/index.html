@@ -12,10 +12,13 @@
     <div id="app" v-cloak>
       <div>
         <label for="goal" :style="{fontSize: '2rem'}">Vue {{about}}</label>
-        <input type="text" v-on:input="updateInfo($event, 'smith')" placeholder="Events in action" :style="{padding: '10px'}" id="goal" />
+        <input 
+          type="text" v-on:input="updateInfo($event, 'smith')" 
+          v-on:keyup.enter="confirmInput" placeholder="Events in action" :style="{padding: '10px'}" id="goal" 
+        />
       
       </div>
-      <p :style="{backgroundColor: 'green', color: 'white', padding: '10px', borderRadius: '20px'}"> Welcome: {{last}} </p>
+      <p :style="{backgroundColor: 'green', color: 'white', padding: '10px', borderRadius: '20px'}"> Your name is: {{ confirmName }}</p>
     </div>
 
     <!-- import Vue cdn -->
