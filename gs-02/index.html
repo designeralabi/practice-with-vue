@@ -11,14 +11,11 @@
   <body>
     <div id="app" v-cloak>
       <div>
-        <label for="goal" :style="{fontSize: '2rem'}">Goal Keeper App</label>
-        <input type="text" v-model="data" placeholder="enter goals here" :style="{padding: '10px'}" id="goal" />
-        <button @click="updateGoal"  :style="{backgroundColor: 'red', color: 'white', border: 'none', padding: '10px'}">Add Goal</button>
+        <label for="goal" :style="{fontSize: '2rem'}">Vue {{about}}</label>
+        <input type="text" v-on:input="updateInfo($event, 'smith')" placeholder="Events in action" :style="{padding: '10px'}" id="goal" />
+      
       </div>
-      <ul>
-        <li v-for="goal in goals">
-          <span class="material-icons">done</span> {{goal}}</li>
-      </ul>
+      <p :style="{backgroundColor: 'green', color: 'white', padding: '10px', borderRadius: '20px'}"> Welcome: {{last}} </p>
     </div>
 
     <!-- import Vue cdn -->
