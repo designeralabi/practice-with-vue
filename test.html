@@ -34,7 +34,9 @@
                 <li v-for="(todo, index) in todos" :key="index">
                     {{todo.text}}
                 </li>
+                <!-- <todo-item></todo-item> -->
             </ol>
+
         </div>
         <button v-on:click="reverseMessage">Reverse Message</button>
         <button v-on:click="toggleBox">toggleBox</button>
@@ -43,6 +45,8 @@
 
     <script src="https://unpkg.com/vue@next"></script>
     <script>
+
+        
         const app = Vue.createApp({
             data() {
                 return {
@@ -63,7 +67,10 @@
                     this.visible = !this.visible
                 }
             },
+
         })
+        
+        
 
 
         app.mount('#app')
