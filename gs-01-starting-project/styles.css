@@ -38,3 +38,8 @@ li {
   padding: 1rem;
   border: 1px solid #ccc;
 }
+
+/* previews vue code-show fast preview*/
+[v-cloak]{
+  display: none;
+}
