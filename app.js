@@ -17,6 +17,15 @@ const app = Vue.createApp({
       this.name = '';
     }
   },
+  watch:{
+    counter(value){
+        if (value > 50){
+          this.counter = 0;
+        }else{
+
+        }
+    }
+  },
   computed:{
     fullName(){
       // prints how many time code runs
