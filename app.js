@@ -12,6 +12,20 @@ const app = Vue.createApp({
     reduce(num) {
       this.counter = this.counter - num;
       // this.counter--;
+    },
+    reset(){
+      this.name = '';
+    }
+  },
+  computed:{
+    fullName(){
+      // prints how many time code runs
+      console.log('running.....');
+      //if the name is empty reset fullName to empty
+      if(this.name === ''){
+        return '';
+      }
+      return this.name + ' ' + 'DOE';
     }
   }
 });
