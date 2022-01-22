@@ -14,16 +14,17 @@
   </head>
   <body>
     <header>
-      <h1>Vue Course Goals</h1>
+      <h1>Vue Behind The Scenes</h1>
     </header>
-    <section id="user-goals">
-      <h2>My course goals</h2>
-      <input type="text" v-model="enteredGoalValue" />
-      <button @click="addGoal" v-show="checker ">Add Goal</button>
-      <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
-      <ul v-else>
-        <li v-for="(goal, index) in goals" @click="removeList(index)">{{ goal }}</li> 
-      </ul>
+    <section id="app">
+      <h2>How Vue Works</h2>
+      <input type="text" ref="userText">
+      <button @click="setText">Set Text</button>
+      <p>{{ message }}</p>
+    </section>
+    <section id="app2">
+      <!-- DOES NOT WORK: <p>{{ message }}</p> -->
+      
     </section>
   </body>
 </html>
