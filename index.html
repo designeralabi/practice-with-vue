@@ -20,8 +20,8 @@
       <ul>
         <li>
           <h2>Manuel Lorenz</h2>
-          <button>Show Details</button>
-          <ul>
+          <button @click="toggleBtn">Show Details</button>
+          <ul v-if="isVisible">
             <li><strong>Phone:</strong> 01234 5678 991</li>
             <li><strong>Email:</strong> manuel@localhost.com</li>
           </ul>
@@ -34,6 +34,7 @@
             <li><strong>Email:</strong> julie@localhost.com</li>
           </ul>
         </li>
+        <first-component></first-component>
       </ul>
     </section>
   </body>
